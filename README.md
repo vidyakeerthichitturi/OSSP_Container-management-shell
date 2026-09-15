@@ -33,3 +33,9 @@ Git & GitHub – Version control and project repository management.
 - Added memory allocation error handling.
 - Added proper memory management using `free()`.
 - Tested the shell with commands longer than a fixed-size input buffer.
+
+  ## Week 3 Features
+- Command parsing using strtok()
+- Dynamic argv[] construction
+- Modular parser implementation
+- Ready for process execution with execvp()
