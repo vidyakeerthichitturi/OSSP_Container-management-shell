@@ -1,4 +1,4 @@
-**Container Management Shell**
+## Container Management Shell
 
 **Project Description**
 
@@ -16,3 +16,26 @@ Make / Makefile – Automating compilation and project builds.
 GDB – Debugging and examining program execution.
 strace – Tracing and analyzing Linux system calls.
 Git & GitHub – Version control and project repository management.
+
+## Week 1 – Project Setup and Basic Shell
+
+- Set up the Linux/Ubuntu development environment.
+- Created the modular project structure with `src/`, `include/`, `docs/`, `tests/`, `screenshots/`, and `bin/`.
+- Implemented the initial ShellForge interactive REPL loop.
+- Added basic command input and `exit` functionality.
+- Created a Makefile for compiling and running the project.
+- Initialized Git and connected the project to GitHub.
+
+  ## Week 2 – Dynamic Input Handling
+
+- Implemented dynamic command input using `malloc()`.
+- Added automatic buffer expansion using `realloc()`.
+- Added memory allocation error handling.
+- Added proper memory management using `free()`.
+- Tested the shell with commands longer than a fixed-size input buffer.
+
+  ## Week 3 Features
+- Command parsing using strtok()
+- Dynamic argv[] construction
+- Modular parser implementation
+- Ready for process execution with execvp()
