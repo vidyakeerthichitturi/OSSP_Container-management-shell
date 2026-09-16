@@ -39,3 +39,12 @@ Git & GitHub – Version control and project repository management.
 - Dynamic argv[] construction
 - Modular parser implementation
 - Ready for process execution with execvp()
+
+## Week 4 – Process Management and Command Execution
+
+- Process creation using fork()
+- Command execution using execvp()
+- Parent-child synchronization using waitpid()
+- Error handling using perror()
+- Execution of real Linux commands
+
