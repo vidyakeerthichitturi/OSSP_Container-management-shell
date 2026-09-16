@@ -48,3 +48,16 @@ Git & GitHub – Version control and project repository management.
 - Error handling using perror()
 - Execution of real Linux commands
 
+## Week 5 – Built-in Commands and Environment Variables
+
+- Implemented built-in command support.
+- Added `cd` for changing the shell's current directory.
+- Added `pwd` for displaying the current directory.
+- Added `help` for displaying available built-in commands.
+- Added `clear` for clearing the terminal.
+- Added `exit` for terminating the shell.
+- Added `env` for displaying environment variables such as `HOME`, `USER`, and `PATH`.
+- Built-in commands execute directly in the shell process.
+- External commands continue to execute using `fork()`, `execvp()`, and `waitpid()`.
+
+
