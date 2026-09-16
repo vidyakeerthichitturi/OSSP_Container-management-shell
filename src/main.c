@@ -7,11 +7,14 @@
 #include "../include/parser.h"
 #include "../include/process.h"
 #include "../include/builtin.h"
+#include "../include/signals.h"
 
 int main()
 {
     char *line;
     char **tokens;
+
+    initialize_signals();
 
     printf("=====================================\n");
     printf("Container Shell Management\n");
@@ -47,5 +50,4 @@ int main()
 
     return 0;
 }
-
 

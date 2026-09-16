@@ -60,4 +60,14 @@ Git & GitHub – Version control and project repository management.
 - Built-in commands execute directly in the shell process.
 - External commands continue to execute using `fork()`, `execvp()`, and `waitpid()`.
 
+## Week 6 – Signals and Process Control
+
+- Added signal handling using `signal()`.
+- Added SIGINT handling for Ctrl+C.
+- Shell remains active when Ctrl+C is pressed.
+- External commands can be interrupted without terminating the shell.
+- Added SIGCHLD handling for child process termination.
+- Added zombie process cleanup using `waitpid()` with `WNOHANG`.
+- Added a separate signal-handling module using `signals.h` and `signals.c`.
+
 
