@@ -5,16 +5,13 @@
 #include "../include/shell.h"
 #include "../include/input.h"
 #include "../include/parser.h"
+#include "../include/process.h"
+#include "../include/pipes.h"
 
 int main()
 {
     char *line;
     char **tokens;
-    int i;
-
-    printf("=====================================\n");
-    printf("ShellForge Version 3.0\n");
-    printf("=====================================\n");
 
     while (1)
     {
@@ -28,16 +25,35 @@ int main()
             break;
         }
 
-        tokens = parse_line(line);
-
-        printf("\nParsed Tokens\n");
-
-        for (i = 0; tokens[i] != NULL; i++)
+        if (strchr(line, '|') != NULL)
         {
-            printf("argv[%d] = %s\n", i, tokens[i]);
+            char *cmd1;
+            char *cmd2;
+            char *pipe_pos;
+
+            pipe_pos = strchr(line, '|');
+            *pipe_pos = '\0';
+
+            cmd1 = line;
+            cmd2 = pipe_pos + 1;
+
+            char **tokens1 = parse_line(cmd1);
+            char **tokens2 = parse_line(cmd2);
+
+            execute_pipe(tokens1, tokens2);
+
+            free_tokens(tokens1);
+            free_tokens(tokens2);
+        }
+        else
+        {
+            tokens = parse_line(line);
+
+            execute(tokens);
+
+            free_tokens(tokens);
         }
 
-        free_tokens(tokens);
         free(line);
     }
 
