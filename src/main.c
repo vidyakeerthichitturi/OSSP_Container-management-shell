@@ -6,12 +6,20 @@
 #include "../include/input.h"
 #include "../include/parser.h"
 #include "../include/process.h"
+#include "../include/builtin.h"
+#include "../include/signals.h"
 #include "../include/pipes.h"
 
 int main()
 {
     char *line;
     char **tokens;
+
+    initialize_signals();
+
+    printf("=====================================\n");
+    printf("ShellForge\n");
+    printf("=====================================\n");
 
     while (1)
     {
@@ -49,7 +57,13 @@ int main()
         {
             tokens = parse_line(line);
 
-            execute(tokens);
+            if (tokens[0] != NULL)
+            {
+                if (execute_builtin(tokens) == 0)
+                {
+                    execute(tokens);
+                }
+            }
 
             free_tokens(tokens);
         }

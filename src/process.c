@@ -1,7 +1,7 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<unistd.h>
-#include<sys/wait.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/wait.h>
 
 int execute(char **tokens)
 {
@@ -10,16 +10,16 @@ int execute(char **tokens)
 
     pid = fork();
 
-    if(pid==0)
+    if (pid == 0)
     {
-        if(execvp(tokens[0],tokens)==-1)
+        if (execvp(tokens[0], tokens) == -1)
         {
             perror("ShellForge");
         }
 
         exit(EXIT_FAILURE);
     }
-    else if(pid<0)
+    else if (pid < 0)
     {
         perror("fork");
     }
@@ -27,10 +27,10 @@ int execute(char **tokens)
     {
         do
         {
-            waitpid(pid,&status,WUNTRACED);
-        }while(!WIFEXITED(status) && !WIFSIGNALED(status));
+            waitpid(pid, &status, WUNTRACED);
+        }
+        while (!WIFEXITED(status) && !WIFSIGNALED(status));
     }
 
     return 1;
 }
-

@@ -39,3 +39,35 @@ Git & GitHub – Version control and project repository management.
 - Dynamic argv[] construction
 - Modular parser implementation
 - Ready for process execution with execvp()
+
+## Week 4 – Process Management and Command Execution
+
+- Process creation using fork()
+- Command execution using execvp()
+- Parent-child synchronization using waitpid()
+- Error handling using perror()
+- Execution of real Linux commands
+
+## Week 5 – Built-in Commands and Environment Variables
+
+- Implemented built-in command support.
+- Added `cd` for changing the shell's current directory.
+- Added `pwd` for displaying the current directory.
+- Added `help` for displaying available built-in commands.
+- Added `clear` for clearing the terminal.
+- Added `exit` for terminating the shell.
+- Added `env` for displaying environment variables such as `HOME`, `USER`, and `PATH`.
+- Built-in commands execute directly in the shell process.
+- External commands continue to execute using `fork()`, `execvp()`, and `waitpid()`.
+
+## Week 6 – Signals and Process Control
+
+- Added signal handling using `signal()`.
+- Added SIGINT handling for Ctrl+C.
+- Shell remains active when Ctrl+C is pressed.
+- External commands can be interrupted without terminating the shell.
+- Added SIGCHLD handling for child process termination.
+- Added zombie process cleanup using `waitpid()` with `WNOHANG`.
+- Added a separate signal-handling module using `signals.h` and `signals.c`.
+
+
