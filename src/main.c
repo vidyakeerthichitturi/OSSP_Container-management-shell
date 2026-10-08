@@ -10,6 +10,7 @@
 #include "../include/signals.h"
 #include "../include/pipes.h"
 #include "../include/redirect.h"
+#include "../include/thread.h"
 
 int main()
 {
@@ -17,6 +18,7 @@ int main()
     char **tokens;
 
     initialize_signals();
+    start_monitor_thread();
 
     printf("=====================================\n");
     printf("ShellForge\n");
