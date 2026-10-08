@@ -9,6 +9,7 @@
 #include "../include/builtin.h"
 #include "../include/signals.h"
 #include "../include/pipes.h"
+#include "../include/redirect.h"
 
 int main()
 {
@@ -61,9 +62,13 @@ int main()
             {
                 if (execute_builtin(tokens) == 0)
                 {
+                   if(execute_redirection(tokens)==0)
+                   {
+
                     execute(tokens);
                 }
             }
+}
 
             free_tokens(tokens);
         }
